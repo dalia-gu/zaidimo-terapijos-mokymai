@@ -95,6 +95,17 @@ p+p{margin-top:14px}
 @media (max-width:960px){.penki{grid-template-columns:repeat(2,1fr)}}
 @media (max-width:600px){.penki{grid-template-columns:1fr}.penki li{padding:40px 22px 24px}}
 
+
+/* susisiekimo langas */
+.kontaktai{margin:auto;border:0;border-radius:28px;padding:36px 32px 28px;max-width:440px;width:calc(100% - 32px);background:var(--kremas);color:var(--ruda);box-shadow:0 24px 60px rgba(39,53,29,.25)}
+.kontaktai::backdrop{background:rgba(39,53,29,.45)}
+.kontaktai h2{font-size:28px;margin-bottom:10px}
+.kontaktai .adresas{font-size:22px;font-weight:700;margin:18px 0 22px;word-break:break-all}
+.kontaktai .veiksmai{flex-direction:column}
+.kontaktai .mygtukas{justify-content:center;width:100%;font:inherit;font-weight:700;border:0;cursor:pointer}
+.kontaktai .uzdaryti{position:absolute;top:14px;right:14px;width:40px;height:40px;border:0;border-radius:50%;background:var(--smelis);font-size:22px;line-height:1;cursor:pointer;color:var(--ruda)}
+.kontaktai .pranesimas{min-height:1.4em;margin-top:12px;font-size:15px;color:var(--zalia);font-weight:600;text-align:center}
+
 /* kelias */
 .kelias{background:var(--zalia-tams);color:var(--geltona)}
 .kelias h2{color:var(--geltona)}
@@ -322,7 +333,7 @@ footer img{height:64px;width:auto}
     <div class="kaire">
       <h2>Ko dažniausiai klausiate</h2>
       <p>Šie klausimai kyla beveik kiekvienam, kas svarsto stoti. Jei jūsų klausimo čia nėra, parašykite.</p>
-      <p style="margin-top:22px"><a href="mailto:info@menaspadeti.lt">info@menaspadeti.lt</a></p>
+      <p style="margin-top:22px"><a href="mailto:info@menaspadeti.lt" data-kontaktai>info@menaspadeti.lt</a></p>
     </div>
     <div>
       <details open>
@@ -424,7 +435,7 @@ footer img{height:64px;width:auto}
     <p>Užpildykite registracijos formą, o jei kyla klausimų, parašykite mums.</p>
     <div class="veiksmai">
       <a class="mygtukas" href="https://forms.gle/tr2UZiVd9HSJAosx6">Pildyti registracijos formą</a>
-      <a class="mygtukas antras" href="mailto:info@menaspadeti.lt">Parašyti klausimą</a>
+      <a class="mygtukas antras" href="mailto:info@menaspadeti.lt" data-kontaktai>Parašyti klausimą</a>
     </div>
   </div>
 </section>
@@ -434,9 +445,38 @@ footer img{height:64px;width:auto}
 <footer>
   <div class="vidus">
     <img src="img/logotipas.png" alt="Menas padėti">
-    <div>Savanorių pr. 363B, Kaunas · +370 649 46466 · <a href="mailto:info@menaspadeti.lt">info@menaspadeti.lt</a> · <a href="https://www.menaspadeti.lt/">menaspadeti.lt</a></div>
+    <div>Savanorių pr. 363B, Kaunas · +370 649 46466 · <a href="mailto:info@menaspadeti.lt" data-kontaktai>info@menaspadeti.lt</a> · <a href="https://www.menaspadeti.lt/">menaspadeti.lt</a></div>
   </div>
 </footer>
+
+
+<dialog class="kontaktai" id="kontaktai" aria-labelledby="kontaktai-antraste">
+  <button class="uzdaryti" type="button" aria-label="Uždaryti">×</button>
+  <h2 id="kontaktai-antraste">Parašykite mums</h2>
+  <p class="antrinis">Atsakysime į visus klausimus apie mokymus.</p>
+  <p class="adresas">info@menaspadeti.lt</p>
+  <div class="veiksmai">
+    <button class="mygtukas" type="button" id="kopijuoti">Kopijuoti adresą</button>
+    <a class="mygtukas antras" href="https://mail.google.com/mail/?view=cm&amp;to=info@menaspadeti.lt&amp;su=Klausimas%20d%C4%97l%20%C5%BEaidimo%20terapijos%20mokym%C5%B3" target="_blank" rel="noopener">Rašyti per Gmail</a>
+    <a class="mygtukas antras" href="mailto:info@menaspadeti.lt?subject=Klausimas%20d%C4%97l%20%C5%BEaidimo%20terapijos%20mokym%C5%B3">Atidaryti pašto programą</a>
+  </div>
+  <p class="pranesimas" id="pranesimas" role="status"></p>
+</dialog>
+<script>
+(function(){
+  var d=document.getElementById('kontaktai');
+  if(!d||!d.showModal) return;
+  document.querySelectorAll('[data-kontaktai]').forEach(function(a){
+    a.addEventListener('click',function(e){e.preventDefault();document.getElementById('pranesimas').textContent='';d.showModal();});
+  });
+  d.querySelector('.uzdaryti').addEventListener('click',function(){d.close();});
+  d.addEventListener('click',function(e){if(e.target===d) d.close();});
+  document.getElementById('kopijuoti').addEventListener('click',function(){
+    var ok=function(){document.getElementById('pranesimas').textContent='Adresas nukopijuotas';};
+    if(navigator.clipboard) navigator.clipboard.writeText('info@menaspadeti.lt').then(ok,function(){});
+  });
+})();
+</script>
 
 </body>
 </html>
