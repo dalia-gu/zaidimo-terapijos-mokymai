@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html lang="lt">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Nedirektyviosios žaidimo terapijos mokymai · Menas padėti</title>
+<meta name="description" content="1,5 metų nedirektyviosios žaidimo terapijos mokymai specialistams Kaune, nuo 2027 m. sausio. Registracija pratęsta iki 2026 m. lapkričio 1 d.">
+<link rel="icon" href="img/logotipas.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;700;800&display=swap" rel="stylesheet">
+<style>
+:root{
+  --kremas:#F4F2ED;
+  --smelis:#E0D2C0;
+  --smelis-sv:#EBE3D7;
+  --ruda:#402D29;
+  --ruda-sv:#705F5C;
+  --zalia:#53733D;
+  --zalia-tams:#27351D;
+  --zalia-sv:#A1CB82;
+  --geltona:#FDF9D2;
+  --plotis:1160px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--kremas);color:var(--ruda);font-family:"Figtree",system-ui,sans-serif;font-size:18px;line-height:1.6;-webkit-font-smoothing:antialiased}
+img{display:block;max-width:100%}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--zalia);outline-offset:3px;border-radius:4px}
+.vidus{max-width:var(--plotis);margin:0 auto;padding:0 24px}
+h1,h2,h3{font-weight:800;line-height:1.1;letter-spacing:-.02em}
+h2{font-size:clamp(32px,4.2vw,50px);margin-bottom:24px}
+h3{font-size:21px;letter-spacing:-.01em}
+p+p{margin-top:14px}
+.antrinis{color:var(--ruda-sv)}
+.skyrius{padding:96px 0}
+
+/* mygtukai */
+.mygtukas{display:inline-flex;align-items:center;gap:10px;background:var(--zalia);color:#fff;text-decoration:none;font-weight:700;font-size:17px;padding:16px 30px;border-radius:999px;transition:background .2s}
+.mygtukas:hover{background:var(--zalia-tams)}
+.mygtukas.antras{background:transparent;color:var(--ruda);box-shadow:inset 0 0 0 2px var(--ruda)}
+.mygtukas.antras:hover{background:var(--ruda);color:var(--kremas)}
+
+/* viršus */
+.virsus{position:sticky;top:0;z-index:10;background:rgba(244,242,237,.94);backdrop-filter:blur(8px);border-bottom:1px solid var(--smelis)}
+.virsus .vidus{display:flex;align-items:center;justify-content:space-between;height:72px}
+.zenklas{display:flex;align-items:center;gap:12px;text-decoration:none;font-weight:700;font-size:16px;line-height:1.15}
+.zenklas img{height:48px;width:auto}
+.virsus .mygtukas{padding:11px 22px;font-size:15px}
+.desine{display:flex;align-items:center;gap:18px}
+.kalba{font-weight:700;font-size:15px;text-decoration:none;padding:8px 4px;border-bottom:2px solid transparent}
+.kalba:hover{border-bottom-color:var(--zalia)}
+
+/* pradžia */
+.pradzia{padding:64px 0 88px}
+.pradzia .vidus{display:grid;grid-template-columns:1.05fr .95fr;gap:64px;align-items:center}
+.pradzia h1{font-size:clamp(44px,6.4vw,84px);margin-bottom:22px}
+.pradzia .poantraste{font-size:clamp(21px,2.1vw,26px);font-weight:500;line-height:1.35;margin-bottom:22px;max-width:30ch}
+.pradzia .kam{color:var(--ruda-sv);max-width:46ch;margin-bottom:36px}
+.veiksmai{display:flex;flex-wrap:wrap;gap:14px}
+.pratesta-mazas{margin-top:18px;font-size:16px;color:var(--zalia);font-weight:600}
+.pabaiga p.pratesta{color:var(--zalia-sv);font-weight:600;margin-bottom:14px}
+.arka{border-radius:999px 999px 28px 28px;overflow:hidden;background:var(--smelis)}
+.arka img{width:100%;height:100%;object-fit:cover}
+.pradzia .arka{aspect-ratio:4/5}
+.pradzia .arka img{object-position:62% center}
+.faktai{display:flex;flex-wrap:wrap;gap:12px 40px;margin-top:44px;padding-top:28px;border-top:1px solid var(--smelis)}
+.faktai div{font-size:15px;color:var(--ruda-sv);line-height:1.3}
+.faktai b{display:block;font-size:30px;color:var(--ruda);font-weight:800;letter-spacing:-.02em}
+
+/* apie */
+.apie{background:var(--smelis-sv)}
+.apie .vidus{display:grid;grid-template-columns:.8fr 1.2fr;gap:72px;align-items:start}
+.apie .arka{aspect-ratio:3/4;position:sticky;top:110px}
+.apie .tekstas{max-width:62ch}
+.sritys{display:grid;grid-template-columns:repeat(3,1fr);gap:28px;margin-top:44px}
+.sritys div{border-top:3px solid var(--zalia);padding-top:14px}
+.sritys p{font-size:16px;color:var(--ruda-sv);margin-top:6px}
+
+
+.tyrimai{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin:34px 0 30px}
+.tyrimai div{border-top:3px solid var(--zalia);padding-top:12px;font-size:15px;line-height:1.4;color:var(--ruda-sv)}
+.tyrimai b{display:block;font-size:40px;font-weight:800;letter-spacing:-.02em;color:var(--ruda);line-height:1.1;margin-bottom:6px}
+@media (max-width:600px){.tyrimai{grid-template-columns:1fr;gap:18px}}
+
+
+.tikime h2{max-width:22ch}
+.penki{list-style:none;display:grid;grid-template-columns:repeat(5,1fr);gap:16px;margin-top:44px}
+.penki li{background:var(--geltona);border-radius:999px 999px 20px 20px;padding:56px 20px 26px;text-align:center}
+.penki .zenkliukas{width:54px;height:54px;margin:0 auto 18px;border-radius:50%;background:var(--zalia);display:grid;place-items:center}
+.penki .zenkliukas svg{width:28px;height:28px;stroke:var(--geltona);fill:none;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+.penki h3{font-size:20px;margin-bottom:8px}
+.penki p{font-size:15px;line-height:1.45;color:var(--ruda-sv)}
+@media (max-width:960px){.penki{grid-template-columns:repeat(2,1fr)}}
+@media (max-width:600px){.penki{grid-template-columns:1fr}.penki li{padding:40px 22px 24px}}
+
+/* kelias */
+.kelias{background:var(--zalia-tams);color:var(--geltona)}
+.kelias h2{color:var(--geltona)}
+.kelias .ivadas{display:grid;grid-template-columns:1.1fr .9fr;gap:56px;align-items:end;margin-bottom:64px}
+.kelias .ivadas p{color:#dcd9b9;max-width:52ch}
+.laikas{display:flex;gap:28px;margin-top:22px}
+.laikas div{font-size:15px;color:#c9c6a6}
+.laikas b{display:block;font-size:22px;color:var(--geltona)}
+.kelias .arka{aspect-ratio:4/3;border-radius:999px 999px 24px 24px}
+.blokai{list-style:none;display:grid;grid-template-columns:repeat(15,1fr);gap:18px;position:relative}
+.blokas{grid-column:span 3}
+.blokas.patvirtinta{grid-column:span 5}
+.blokas{background:rgba(253,249,210,.06);grid-column:span 3;border:1px solid rgba(161,203,130,.28);border-radius:120px 120px 18px 18px;padding:40px 22px 24px;min-height:0;display:flex;flex-direction:column;align-items:center;text-align:center}
+.blokas .nr{font-size:44px;font-weight:800;color:var(--zalia-sv);line-height:1;text-align:center;margin-bottom:18px}
+.blokas .data{font-weight:700;color:var(--geltona);font-size:20px}
+.blokas .tema{font-size:15px;color:#d3d0b0;line-height:1.45}
+.blokas.patvirtinta{background:var(--geltona);border-color:var(--geltona)}
+.blokas.patvirtinta .nr{color:var(--zalia)}
+.blokas.patvirtinta .data{color:var(--ruda)}
+.blokas.patvirtinta .tema{color:var(--ruda-sv)}
+.pertrauka{grid-column:1/-1;display:flex;align-items:center;gap:16px;color:var(--zalia-sv);font-size:15px;padding:4px 0}
+.pertrauka::before,.pertrauka::after{content:"";flex:1;border-top:1px dashed rgba(161,203,130,.5)}
+.kelias .pastaba{margin-top:36px;font-size:15px;color:#c9c6a6;max-width:70ch}
+.kelias .pastaba b{color:var(--geltona);font-weight:700}
+
+/* klausimai */
+.klausimai .vidus{display:grid;grid-template-columns:.75fr 1.25fr;gap:72px}
+.klausimai .kaire p{color:var(--ruda-sv);max-width:34ch}
+details{border-top:1px solid var(--smelis)}
+details:last-child{border-bottom:1px solid var(--smelis)}
+summary{list-style:none;cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:20px;padding:26px 0;font-size:22px;font-weight:700;letter-spacing:-.01em}
+summary::-webkit-details-marker{display:none}
+summary::after{content:"";flex:none;width:34px;height:34px;border-radius:50%;background:var(--smelis) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M12 5v14M5 12h14' stroke='%23402D29' stroke-width='2.2' stroke-linecap='round'/%3E%3C/svg%3E") center/16px no-repeat;transition:transform .25s}
+details[open] summary::after{transform:rotate(45deg)}
+.atsakymas{padding:0 0 28px;max-width:62ch;color:var(--ruda)}
+.atsakymas ul{margin:12px 0 0 20px}
+.atsakymas li+li{margin-top:6px}
+.taisyti{background:var(--geltona);box-shadow:0 0 0 4px var(--geltona);border-radius:2px}
+
+/* juosta nuotraukų */
+.juosta{display:grid;grid-template-columns:1fr 1.3fr 1fr 1fr;gap:16px;padding:0 24px 96px;max-width:1400px;margin:0 auto}
+.juosta .arka{aspect-ratio:2/3;border-radius:28px}
+.juosta .arka img{object-position:center top}
+.juosta .arka:nth-child(2){aspect-ratio:auto}
+.juosta .arka:nth-child(2) img{object-position:40% center}
+
+/* stojimas ir kaina */
+.stojimas{background:var(--smelis-sv)}
+.du{display:grid;grid-template-columns:1fr 1fr;gap:72px}
+.sarasas{list-style:none;margin-top:18px}
+.sarasas li{position:relative;padding-left:28px;margin-top:12px}
+.sarasas li::before{content:"";position:absolute;left:0;top:.6em;width:12px;height:12px;border-radius:12px 12px 3px 3px;background:var(--zalia)}
+.kaina-didele{font-size:clamp(56px,7vw,88px);font-weight:800;letter-spacing:-.03em;line-height:1}
+.kaina-didele span{font-size:22px;font-weight:500;letter-spacing:0;color:var(--ruda-sv);margin-left:8px}
+.mokejimai{margin-top:28px;display:grid;gap:12px}
+.mokejimai div{background:var(--kremas);border-radius:18px;padding:18px 22px;display:flex;justify-content:space-between;gap:16px;align-items:baseline}
+.mokejimai div.ankstyva{background:var(--geltona)}
+.mokejimai b{white-space:nowrap;font-size:20px}
+.ieina{display:grid;grid-template-columns:1fr 1fr;gap:28px;margin-top:40px;font-size:16px}
+.ieina h3{font-size:17px;margin-bottom:4px}
+
+/* lektorės */
+.lektores .vidus{display:grid;grid-template-columns:.8fr 1.2fr;gap:72px;align-items:start}
+.lektores .arka{aspect-ratio:4/5}
+.lektore{padding:26px 0;border-top:1px solid var(--smelis)}
+.lektore:first-of-type{border-top:0;padding-top:0}
+.lektore h3{font-size:26px;margin-bottom:6px}
+.lektore p{color:var(--ruda-sv);max-width:60ch}
+.partneriai{list-style:none;margin-top:10px;color:var(--ruda-sv)}
+.partneriai li{margin-top:8px}
+.partneriai b{color:var(--ruda)}
+
+/* pabaiga */
+.pabaiga{background:var(--zalia-tams);color:var(--geltona);text-align:center;padding:110px 0}
+.pabaiga h2{color:var(--geltona);font-size:clamp(34px,5vw,60px);max-width:18ch;margin:0 auto 20px}
+.pabaiga p{color:#dcd9b9;max-width:54ch;margin:0 auto 36px}
+.pabaiga .mygtukas{background:var(--zalia-sv);color:var(--zalia-tams)}
+.pabaiga .mygtukas:hover{background:var(--geltona)}
+.pabaiga .mygtukas.antras{background:transparent;color:var(--geltona);box-shadow:inset 0 0 0 2px var(--geltona)}
+.pabaiga .veiksmai{justify-content:center}
+
+.vieta{display:grid;grid-template-columns:1.2fr .8fr;gap:56px;align-items:center}
+.vieta .arka{aspect-ratio:16/10;border-radius:24px}
+
+footer{padding:48px 0;font-size:15px;color:var(--ruda-sv)}
+footer .vidus{display:flex;flex-wrap:wrap;justify-content:space-between;gap:20px;align-items:center}
+footer img{height:64px;width:auto}
+
+/* vienas įžanginis judesys */
+@media (prefers-reduced-motion:no-preference){
+  .pradzia .arka{animation:iskyla 1.1s cubic-bezier(.2,.7,.2,1) both}
+  .pradzia .tekstas>*{animation:atsiranda .8s ease both}
+  .pradzia .tekstas>*:nth-child(2){animation-delay:.08s}
+  .pradzia .tekstas>*:nth-child(3){animation-delay:.16s}
+  .pradzia .tekstas>*:nth-child(4){animation-delay:.24s}
+  .pradzia .tekstas>*:nth-child(5){animation-delay:.32s}
+  @keyframes iskyla{from{clip-path:inset(100% 0 0 0 round 999px 999px 28px 28px)}to{clip-path:inset(0 0 0 0 round 999px 999px 28px 28px)}}
+  @keyframes atsiranda{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:none}}
+}
+
+@media (max-width:960px){
+  .pradzia .vidus,.apie .vidus,.klausimai .vidus,.lektores .vidus,.du,.kelias .ivadas,.vieta{grid-template-columns:1fr;gap:40px}
+  .apie .arka{position:static;aspect-ratio:4/3;max-width:560px}
+  .blokai{grid-template-columns:repeat(2,1fr)}
+  .blokas,.blokas.patvirtinta{grid-column:auto}
+  .juosta{grid-template-columns:1fr 1fr}
+  .juosta .arka:nth-child(2){aspect-ratio:3/4}
+  .lektores .arka{max-width:420px}
+}
+@media (max-width:600px){
+  body{font-size:17px}
+  .vidus{padding:0 16px}
+  .skyrius{padding:68px 0}
+  .pradzia{padding:32px 0 60px}
+  .pradzia .arka{aspect-ratio:1/1}
+  .virsus .vidus{height:64px}
+  .zenklas span{display:none}
+  .zenklas img{height:42px}
+  .sritys{grid-template-columns:1fr;gap:20px}
+  .blokai{grid-template-columns:1fr}
+  .blokas{min-height:0;border-radius:90px 90px 16px 16px;padding:30px 22px 22px}
+  .ieina{grid-template-columns:1fr}
+  .juosta{padding:0 16px 68px;gap:10px}
+  .veiksmai .mygtukas{width:100%;justify-content:center}
+  summary{font-size:19px}
+  .mokejimai div{flex-direction:column;gap:2px}
+  .kaina-didele span{display:block;margin:10px 0 0}
+}
+</style>
+</head>
+<body>
+
+<header class="virsus">
+  <div class="vidus">
+    <a class="zenklas" href="https://www.menaspadeti.lt/"><img src="img/logotipas.png" alt="Psichoterapijos centras „Menas padėti“"><span>Psichoterapijos centras<br>„Menas padėti“</span></a>
+    <div class="desine">
+      <a class="kalba" href="en.html" hreflang="en" lang="en">EN</a>
+      <a class="mygtukas" href="https://forms.gle/tr2UZiVd9HSJAosx6">Registruotis</a>
+    </div>
+  </div>
+</header>
+
+<main>
+
+<section class="pradzia">
+  <div class="vidus">
+    <div class="tekstas">
+      <h1>Nedirektyvioji žaidimo terapija</h1>
+      <p class="poantraste">Aštuoni mokymosi blokai Kaune, nuo 2027 m. sausio iki 2028 m. birželio.</p>
+      <p class="kam">Pusantrų metų mokymai specialistams, kurie dirba su ikimokyklinio ir jaunesniojo mokyklinio amžiaus vaikais ir nori išmokti taikyti žaidimo terapiją.</p>
+      <div class="veiksmai">
+        <a class="mygtukas" href="https://forms.gle/tr2UZiVd9HSJAosx6">Registruotis iki spalio 1 d.</a>
+        <a class="mygtukas antras" href="#klausimai">Skaityti apie mokymus</a>
+      </div>
+      <p class="pratesta-mazas">Dėl didelio susidomėjimo registracijos terminas pratęstas iki lapkričio 1 d.</p>
+      <div class="faktai">
+        <div><b>150</b>akademinių valandų</div>
+        <div><b>17</b>dienų gyvai</div>
+        <div><b>32 val.</b>grupinių supervizijų kainoje</div>
+      </div>
+    </div>
+    <div class="arka"><img src="img/01-pradzia-zaidimo-kabinetas.jpg" alt="Žaidimo terapijos kabinetas su figūrėlių lentyna"></div>
+  </div>
+</section>
+
+<section class="skyrius apie">
+  <div class="vidus">
+    <div class="arka"><img src="img/02-smelio-deze.jpg" alt="Rankos smėlio dėžėje"></div>
+    <div class="tekstas">
+      <h2>Kodėl verta mokytis žaidimo terapijos</h2>
+      <p>Jei dirbate su vaikais ir jaučiate, kad pokalbis ar įprasti metodai ne visada padeda, tai natūralu. Maži vaikai dar negali papasakoti, kas jiems sunku. Jie tai parodo žaisdami.</p>
+      <p>Žaidimo terapija yra vaikams itin tinkama psichoterapijos forma. Profesionaliai parengtas žaidimo terapeutas naudoja žaidimą kaip pagrindinę priemonę padėti vaikui įveikti emocinius, elgesio ir kitus psichologinius sunkumus (Schaefer, 1999). Žaidimas yra natūrali vaiko kalba, o žaislai – jo žodžiai (Landreth, 2002).</p>
+      <p>Tai tyrimais grįstas metodas. Jo veiksmingumą rodo kelios metaanalizės, o humanistinių, nedirektyviųjų metodų rezultatai buvo geresni nei kitų krypčių (Bratton ir kt., 2005).</p>
+      <div class="tyrimai">
+        <div><b>0,80</b>didelis efekto dydis, 93 kontroliuojami tyrimai (Bratton, Ray, Rhine ir Jones, 2005)</div>
+        <div><b>0,66</b>42 tyrimų metaanalizė (LeBlanc ir Ritchie, 2001)</div>
+        <div><b>0,47</b>52 į vaiką orientuotos žaidimo terapijos tyrimai (Lin ir Bratton, 2015)</div>
+      </div>
+      <p>Mūsų žaidimo terapijos mokymų programa – vienintelė Lietuvoje. Ji parengta pagal tarptautines žaidimo terapeutų rengimo rekomendacijas ir remiasi dr. Garry Landreth bei kitų į vaiką orientuotos žaidimo terapijos atstovų sistema.</p>
+    </div>
+  </div>
+</section>
+
+<section class="skyrius tikime">
+  <div class="vidus">
+    <h2>Penki dalykai, kuriais tiki į vaiką orientuoti žaidimo terapeutai</h2>
+    <p class="antrinis" style="max-width:60ch">Nedirektyvioji žaidimo terapija remiasi ne technikomis, o požiūriu į vaiką.</p>
+    <ul class="penki">
+      <li><div class="zenkliukas"><svg viewBox="0 0 24 24"><path d="M4 5h16v11H9l-5 4z"/><circle cx="9" cy="10.5" r=".6"/><circle cx="12" cy="10.5" r=".6"/><circle cx="15" cy="10.5" r=".6"/></svg></div><h3>Žaidimas yra kalba</h3><p>Žaidimas yra natūrali vaiko kalba, o žaislai – jo žodžiai.</p></li>
+      <li><div class="zenkliukas"><svg viewBox="0 0 24 24"><path d="M12 21v-9"/><path d="M12 12c0-4 3-7 7-7 0 4-3 7-7 7z"/><path d="M12 14c0-3-2.5-5.5-6-5.5 0 3 2.5 5.5 6 5.5z"/></svg></div><h3>Vaikas žino kelią</h3><p>Vaikas turi vidinę išmintį, kaip eiti link gerėjimo ir sveikimo.</p></li>
+      <li><div class="zenkliukas"><svg viewBox="0 0 24 24"><circle cx="6" cy="18" r="2"/><circle cx="18" cy="6" r="2"/><path d="M8 18h5a3 3 0 0 0 0-6h-2a3 3 0 0 1 0-6h5"/></svg></div><h3>Vaikas veda</h3><p>Terapinį procesą veda pats vaikas.</p></li>
+      <li><div class="zenkliukas"><svg viewBox="0 0 24 24"><circle cx="12" cy="7" r="3"/><path d="M6 21v-2a6 6 0 0 1 12 0v2"/></svg></div><h3>Vaikas yra visavertis</h3><p>Vaikas yra atsparus, pagarbos vertas žmogus, o ne mažas suaugęs.</p></li>
+      <li><div class="zenkliukas"><svg viewBox="0 0 24 24"><path d="M12 20s-7-4.5-7-10a4 4 0 0 1 7-2.6A4 4 0 0 1 19 10c0 5.5-7 10-7 10z"/></svg></div><h3>Keičia santykis</h3><p>Svarbiausias pokyčio veiksnys yra pats santykis. Procesas svarbiau nei rezultatas.</p></li>
+    </ul>
+  </div>
+</section>
+
+<section class="skyrius kelias" id="kelias">
+  <div class="vidus">
+    <div class="ivadas">
+      <div>
+        <h2>Kaip vyks mokymai</h2>
+        <p>Susitiksime maždaug kas du mėnesius, visą savaitgalį, centre Kaune. Sekmadienį pradėsime ir baigsime valanda anksčiau, kad atvykusieji iš toliau spėtų grįžti namo.</p>
+        <div class="laikas">
+          <div><b>10:00–18:00</b>šeštadienį</div>
+          <div><b>9:00–17:00</b>sekmadienį</div>
+        </div>
+      </div>
+      <div class="arka"><img src="img/03-dalia-veda-mokymus.jpg" alt="Dalia Guzaitienė veda užsiėmimą apie darbą su tėvais"></div>
+    </div>
+
+    <ol class="blokai">
+      <li class="blokas patvirtinta"><div class="nr">1</div><div class="data">2027 m. sausio 16–17 d.</div></li>
+      <li class="blokas patvirtinta"><div class="nr">2</div><div class="data">2027 m. kovo 6–7 d.</div></li>
+      <li class="blokas patvirtinta"><div class="nr">3</div><div class="data">2027 m. gegužės 22–23 d.</div></li>
+      <li class="pertrauka">toliau dar penki blokai, iki 2028 m. birželio</li>
+    </ol>
+
+    <p class="pastaba"><b>Pirmųjų trijų blokų datos patvirtintos.</b> Kitų blokų datas patikslinsime prasidėjus mokymams.</p>
+  </div>
+</section>
+
+<section class="skyrius klausimai" id="klausimai">
+  <div class="vidus">
+    <div class="kaire">
+      <h2>Ko dažniausiai klausiate</h2>
+      <p>Šie klausimai kyla beveik kiekvienam, kas svarsto stoti. Jei jūsų klausimo čia nėra, parašykite.</p>
+      <p style="margin-top:22px"><a href="mailto:info@menaspadeti.lt">info@menaspadeti.lt</a></p>
+    </div>
+    <div>
+      <details open>
+        <summary>Ar suderinsiu mokymus su darbu?</summary>
+        <div class="atsakymas"><p>Užsiėmimai vyks savaitgaliais, maždaug kas du mėnesius, tad darbo dienų nereikia. Praktiką dažniausiai galima atlikti savo darbovietėje.</p></div>
+      </details>
+      <details>
+        <summary>Ką reikės atlikti, kad gaučiau pažymėjimą?</summary>
+        <div class="atsakymas"><p>Dalyvauti visuose blokuose, atlikti praktines užduotis, prižiūrimą žaidimo terapijos praktiką su supervizija ir baigiamąjį egzaminą.</p>
+          <p>Žaidimo terapijos praktika prasideda rudenį, kai jau turite pagrindinius praktinius įgūdžius.</p></div>
+      </details>
+      <details>
+        <summary>Ar programa akredituota?</summary>
+        <div class="atsakymas"><p>Programa įregistruota Neformaliojo švietimo programų registre ir šiuo metu vertinama dėl įtraukimo į Kursuok.lt.</p>
+          <p>Visapusiška akreditacija, kaip užsienio šalyse, bus įmanoma tik tada, kai atsiras atitinkama įstatyminė bazė ir Žaidimo terapijos asociacija Lietuvoje.</p>
+          <p>Kiekvienas žaidimo terapijos mokymų dalyvis galės prisidėti prie žaidimo terapijos įteisinimo ir akreditavimo Lietuvoje ir užsienyje.</p></div>
+      </details>
+      <details>
+        <summary>Ar reikės mokėti anglų kalbą?</summary>
+        <div class="atsakymas">
+          <p>Mokymai vyks lietuvių kalba. Kai ves kviestinis užsienio lektorius, užsiėmimas gali vykti anglų kalba, o esant poreikiui bus verčiama.</p>
+          <p>Dėl lietuviškai kalbančių žaidimo terapijos supervizorių trūkumo bei siekiant išlaikyti išorinės supervizijos nepriklausomumą nuo mokymų organizatorių, vienintelis būdas ją gauti – nuotoliniu būdu su kitų šalių specialistais.</p>
+          <p>Mes padėsime susirasti ir išsirinkti išorinius supervizorius iš rekomenduojamų supervizorių sąrašo. Pagrindinė kalba čia yra anglų, su galimybe rinktis lenkų ar slovakų kalbą. Bandysime derinti ir rusų kalbos galimybę.</p>
+          <p>Supervizorių galite susirasti ir patys, jei jo kvalifikacija atitinka žaidimo terapijos supervizavimo reikalavimus.</p>
+        </div>
+      </details>
+    </div>
+  </div>
+</section>
+
+<div class="juosta" aria-hidden="true">
+  <div class="arka"><img src="img/08-su-lele.jpg" alt=""></div>
+  <div class="arka"><img src="img/06-zaislai-lentyna.jpg" alt=""></div>
+  <div class="arka"><img src="img/07-muzikiniai-instrumentai.jpg" alt=""></div>
+  <div class="arka"><img src="img/09-knyga-rankose.jpg" alt=""></div>
+</div>
+
+<section class="skyrius stojimas" id="stojimas">
+  <div class="vidus du">
+    <div>
+      <h2>Kas gali stoti</h2>
+      <p>Programa skirta brandiems specialistams, kurie nori konsultuoti vaikus ir šeimas, dirbti su tėvais ir naudoti kūrybines terapines priemones.</p>
+      <p style="margin-top:14px">Priimami psichologai, socialiniai darbuotojai, gydytojai, psichoterapeutai, meno ir šeimos terapeutai, turintys magistro laipsnį ir bent 2–3 metų darbo su vaikais patirtį.</p>
+      <p class="antrinis">Apie stojimo tvarką ir reikiamus dokumentus klauskite info@menaspadeti.lt.</p>
+    </div>
+    <div>
+      <h2>Kaina</h2>
+      <div class="kaina-didele">2000 €<span>už visą programą</span></div>
+      <div class="mokejimai">
+        <div><span>Avansas, sumokamas gavus patvirtinimą</span><b>300 €</b></div>
+        <div class="ankstyva"><span>Sumokant visą sumą iš karto iki registracijos pabaigos</span><b>1900 €</b></div>
+      </div>
+      <p class="antrinis" style="margin-top:22px;font-size:16px">Likusią sumą galima mokėti dalimis. Mokymus gali apmokėti ir darbovietė.</p>
+    </div>
+  </div>
+</section>
+
+<section class="skyrius lektores">
+  <div class="vidus">
+    <div class="arka"><img src="img/04-dalia-portretas-2.jpg" alt="Dalia Guzaitienė" style="object-position:center 18%"></div>
+    <div>
+      <h2>Kas veda</h2>
+      <div class="lektore">
+        <h3>Dalia Guzaitienė</h3>
+        <p>Psichologė-psichoterapeutė, žaidimo terapeutė ir supervizorė, vienintelė Lietuvoje psichoterapeutė su žaidimo terapijos specializacija. Humanistinę ir integralią psichoterapiją bei žaidimo terapiją studijavo Airijoje. Žaidimo terapiją praktikuoja nuo 2013 m., mokymus specialistams veda nuo 2017 m.</p>
+      </div>
+      <div class="lektore">
+        <h3>Rita Bagdonaitė</h3>
+        <p>Psichologė, psichodinaminės psichoterapijos psichoterapeutė, „Neįtikėtinų metų“ programos vedėja ir mokymų konsultantė. Specializuojasi tėvystės įgūdžių, globos ir traumų srityse.</p>
+      </div>
+      <div class="lektore">
+        <h3>Kviestiniai lektoriai</h3>
+        <ul class="partneriai">
+          <li><b>Zuzana Dubenkova</b>, žaidimo terapeutė, lektorė, Slovakų-čekų žaidimo terapijos asociacijos prezidentė, supervizorė (Slovakija)</li>
+          <li><b>Joanna Babinska</b>, vaikų, paauglių ir šeimos psichoterapeutė, žaidimo terapeutė ir supervizorė (Lenkija)</li>
+          <li><b>dr. Eimir McGrath</b>, psichologė-psichoterapeutė, žaidimo terapeutė ir supervizorė (Airija)</li>
+        </ul>
+        <p style="margin-top:14px">Kviestinių lektorių užsiėmimų detales patikslinsime prasidėjus mokymams.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="skyrius" style="padding-top:0">
+  <div class="vidus vieta">
+    <div class="arka"><img src="img/05-centro-laukiamasis.jpg" alt="Centro „Menas padėti“ laukiamasis"></div>
+    <div>
+      <h2>Kur</h2>
+      <p>Psichoterapijos centras „Menas padėti“<br>Savanorių pr. 363B, Kaunas</p>
+      <p class="antrinis">Užsiėmimai vyks centro patalpose. Papildomai bus mokomasi nuotoliu ir savarankiškai.</p>
+    </div>
+  </div>
+</section>
+
+<section class="pabaiga" id="registracija">
+  <div class="vidus">
+    <h2>Registracija vyksta iki 2026 m. spalio 1 d.</h2>
+    <p class="pratesta">Dėl didelio susidomėjimo registracijos terminas pratęstas iki lapkričio 1 d.</p>
+    <p>Užpildykite registracijos formą, o jei kyla klausimų, parašykite mums.</p>
+    <div class="veiksmai">
+      <a class="mygtukas" href="https://forms.gle/tr2UZiVd9HSJAosx6">Pildyti registracijos formą</a>
+      <a class="mygtukas antras" href="mailto:info@menaspadeti.lt">Parašyti klausimą</a>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <div class="vidus">
+    <img src="img/logotipas.png" alt="Menas padėti">
+    <div>Savanorių pr. 363B, Kaunas · +370 649 46466 · <a href="mailto:info@menaspadeti.lt">info@menaspadeti.lt</a> · <a href="https://www.menaspadeti.lt/">menaspadeti.lt</a></div>
+  </div>
+</footer>
+
+</body>
+</html>
