@@ -41,6 +41,15 @@ p+p{margin-top:14px}
 .mygtukas:hover{background:var(--zalia-tams)}
 .mygtukas.antras{background:transparent;color:var(--ruda);box-shadow:inset 0 0 0 2px var(--ruda)}
 .mygtukas.antras:hover{background:var(--ruda);color:var(--kremas)}
+.uzuomina{display:flex;align-items:flex-start;gap:4px;margin:0 0 2px 10px;color:var(--zalia);font-weight:700;font-size:17px;line-height:1.2;animation:linguoja 1.6s ease-in-out infinite}
+.uzuomina svg{width:46px;height:40px;flex:none;stroke:currentColor;fill:none;stroke-width:2.4;stroke-linecap:round;stroke-linejoin:round}
+.pabaiga .uzuomina{justify-content:center;color:var(--zalia-sv);margin-left:0}
+@keyframes linguoja{0%,100%{transform:translateY(0)}50%{transform:translateY(6px)}}
+.mygtukas.kviecia{animation:pulsas 2.2s ease-out infinite}
+.pabaiga .mygtukas.kviecia{animation-name:pulsas-sv}
+@keyframes pulsas{0%{box-shadow:0 0 0 0 rgba(83,115,61,.5)}70%,100%{box-shadow:0 0 0 14px rgba(83,115,61,0)}}
+@keyframes pulsas-sv{0%{box-shadow:0 0 0 0 rgba(161,203,130,.55)}70%,100%{box-shadow:0 0 0 14px rgba(161,203,130,0)}}
+@media (prefers-reduced-motion:reduce){.uzuomina,.mygtukas.kviecia{animation:none}}
 
 /* viršus */
 .virsus{position:sticky;top:0;z-index:10;background:rgba(244,242,237,.94);backdrop-filter:blur(8px);border-bottom:1px solid var(--smelis)}
@@ -115,6 +124,8 @@ p+p{margin-top:14px}
 .laikas div{font-size:15px;color:#c9c6a6}
 .laikas b{display:block;font-size:22px;color:var(--geltona)}
 .kelias .arka{aspect-ratio:4/3;border-radius:999px 999px 24px 24px}
+.kelias .pora{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.kelias .pora .arka{aspect-ratio:3/4}
 .blokai{list-style:none;display:grid;grid-template-columns:repeat(15,1fr);gap:18px;position:relative}
 .blokas{grid-column:span 3}
 .blokas.patvirtinta{grid-column:span 5}
@@ -146,7 +157,7 @@ details[open] summary::after{transform:rotate(45deg)}
 .taisyti{background:var(--geltona);box-shadow:0 0 0 4px var(--geltona);border-radius:2px}
 
 /* juosta nuotraukų */
-.juosta{display:grid;grid-template-columns:1fr 1.3fr 1fr 1fr;gap:16px;padding:0 24px 96px;max-width:1400px;margin:0 auto}
+.juosta{display:grid;grid-template-columns:1fr 1.3fr 1fr 1fr 1fr 1fr;gap:16px;padding:0 24px 96px;max-width:1400px;margin:0 auto}
 .juosta .arka{aspect-ratio:2/3;border-radius:28px}
 .juosta .arka img{object-position:center top}
 .juosta .arka:nth-child(2){aspect-ratio:auto}
@@ -202,6 +213,7 @@ footer img{height:64px;width:auto}
   .pradzia .tekstas>*:nth-child(3){animation-delay:.16s}
   .pradzia .tekstas>*:nth-child(4){animation-delay:.24s}
   .pradzia .tekstas>*:nth-child(5){animation-delay:.32s}
+  .pradzia .tekstas>.uzuomina{animation:atsiranda .8s ease .32s both,linguoja 1.6s ease-in-out 1.2s infinite}
   @keyframes iskyla{from{clip-path:inset(100% 0 0 0 round 999px 999px 28px 28px)}to{clip-path:inset(0 0 0 0 round 999px 999px 28px 28px)}}
   @keyframes atsiranda{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:none}}
 }
@@ -261,8 +273,9 @@ footer img{height:64px;width:auto}
         <div><b>17</b>days in person</div>
         <div><b>8</b>training modules</div>
       </div>
+      <div class="uzuomina" aria-hidden="true"><svg viewBox="0 0 46 40"><path d="M42 7C25 5 12 15 12 34"/><path d="M5 27l7 8 7-8"/></svg><span>To register, click here</span></div>
       <div class="veiksmai">
-        <a class="mygtukas" href="https://forms.gle/tr2UZiVd9HSJAosx6">Register by 1 November</a>
+        <a class="mygtukas kviecia" href="https://forms.gle/tr2UZiVd9HSJAosx6">Register by 1 November</a>
         <a class="mygtukas antras" href="NDPT-Programme-Description-EN.pdf" download>Programme description</a>
       </div>
       <p class="pratesta-mazas">Due to high interest, registration has been extended until 1 November.</p>
@@ -309,7 +322,10 @@ footer img{height:64px;width:auto}
           <div><b>9:00–17:00</b>Sunday</div>
         </div>
       </div>
-      <div class="arka"><img src="img/03-dalia-veda-mokymus.jpg" alt="Dalia Guzaitienė leading a session on working with parents"></div>
+      <div class="pora">
+        <div class="arka"><img src="img/03-dalia-veda-mokymus.jpg" alt="Dalia Guzaitienė leading a session on working with parents" style="object-position:28% center"></div>
+        <div class="arka"><img src="img/10-dalia-kspsi-su-lele.jpg" alt="Dalia Guzaitienė with a puppet, presenting at a conference" style="object-position:center top"></div>
+      </div>
     </div>
 
     <ol class="blokai">
@@ -361,8 +377,10 @@ footer img{height:64px;width:auto}
 
 <div class="juosta" aria-hidden="true">
   <div class="arka"><img src="img/08-su-lele.jpg" alt=""></div>
+  <div class="arka"><img src="img/11-dalia-kspsi-skaidre.jpg" alt="" style="object-position:82% center"></div>
   <div class="arka"><img src="img/06-zaislai-lentyna.jpg" alt=""></div>
   <div class="arka"><img src="img/07-muzikiniai-instrumentai.jpg" alt=""></div>
+  <div class="arka"><img src="img/12-dalia-kspsi-borisas.jpg" alt="" style="object-position:center 40%"></div>
   <div class="arka"><img src="img/09-knyga-rankose.jpg" alt=""></div>
 </div>
 
@@ -420,8 +438,9 @@ footer img{height:64px;width:auto}
     <h2>Registration is open until 1 November 2026</h2>
     <p class="pratesta">Due to high interest, registration has been extended until 1 November.</p>
     <p>Fill in the registration form (in Lithuanian), or write to us if you have any questions.</p>
+    <div class="uzuomina" aria-hidden="true"><svg viewBox="0 0 46 40"><path d="M42 7C25 5 12 15 12 34"/><path d="M5 27l7 8 7-8"/></svg><span>To register, click here</span></div>
     <div class="veiksmai">
-      <a class="mygtukas" href="https://forms.gle/tr2UZiVd9HSJAosx6">Registration form</a>
+      <a class="mygtukas kviecia" href="https://forms.gle/tr2UZiVd9HSJAosx6">Registration form</a>
       <a class="mygtukas antras" href="mailto:info@menaspadeti.lt" data-kontaktai>Write to us</a>
     </div>
   </div>
