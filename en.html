@@ -160,7 +160,8 @@ details[open] summary::after{transform:rotate(45deg)}
 .juosta{display:grid;grid-template-columns:1fr 1.3fr 1fr 1fr 1fr 1fr;gap:16px;padding:0 24px 96px;max-width:1400px;margin:0 auto}
 .juosta .arka{aspect-ratio:2/3;border-radius:28px}
 .juosta .arka img{object-position:center top}
-.juosta .arka:nth-child(2){aspect-ratio:auto}
+.juosta .arka:nth-child(2){aspect-ratio:auto;position:relative}
+.juosta .arka:nth-child(2) img{position:absolute;inset:0}
 .juosta .arka:nth-child(2) img{object-position:40% center}
 
 /* stojimas ir kaina */
@@ -377,10 +378,10 @@ footer img{height:64px;width:auto}
 
 <div class="juosta" aria-hidden="true">
   <div class="arka"><img src="img/08-su-lele.jpg" alt=""></div>
-  <div class="arka"><img src="img/11-dalia-kspsi-skaidre.jpg" alt="" style="object-position:82% center"></div>
+  <div class="arka"><img src="img/12-dalia-kspsi-borisas.jpg" alt="" style="object-position:center 40%"></div>
   <div class="arka"><img src="img/06-zaislai-lentyna.jpg" alt=""></div>
   <div class="arka"><img src="img/07-muzikiniai-instrumentai.jpg" alt=""></div>
-  <div class="arka"><img src="img/12-dalia-kspsi-borisas.jpg" alt="" style="object-position:center 40%"></div>
+  <div class="arka"><img src="img/11-dalia-kspsi-skaidre.jpg" alt="" style="object-position:82% center"></div>
   <div class="arka"><img src="img/09-knyga-rankose.jpg" alt=""></div>
 </div>
 
